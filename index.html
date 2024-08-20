@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corville Pressure Cleaners</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>Corville Pressure Cleaners</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-icon">
+                <div class="menu-bar"></div>
+                <div class="menu-bar"></div>
+                <div class="menu-bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Professional Pressure Cleaning Services</h2>
+            <p>Make your home shine with our expert cleaning services.</p>
+            <a href="#services" class="btn-primary">Our Services</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">🏠</div>
+                <h3>House Washing</h3>
+                <p>Keep your home looking new with our house washing services.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🧼</div>
+                <h3>Driveway Cleaning</h3>
+                <p>Remove stains and dirt from your driveway.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🌳</div>
+                <h3>Roof Cleaning</h3>
+                <p>Protect your roof with our gentle cleaning techniques.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Cleaning</h3>
+                <p>Professional cleaning for commercial properties.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Our Work</h2>
+        <div class="gallery-grid">
+            <a href="img1.jpg" data-lightbox="gallery"><img src="img1_thumb.jpg" alt="Before and after 1"></a>
+            <a href="img2.jpg" data-lightbox="gallery"><img src="img2_thumb.jpg" alt="Before and after 2"></a>
+            <a href="img3.jpg" data-lightbox="gallery"><img src="img3_thumb.jpg" alt="Before and after 3"></a>
+            <a href="img4.jpg" data-lightbox="gallery"><img src="img4_thumb.jpg" alt="Before and after 4"></a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>Corville Pressure Cleaners is dedicated to providing top-quality cleaning services for residential and commercial properties. Our experienced team uses the latest techniques and equipment to ensure your property looks its best.</p>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">How often should I pressure wash my house?</button>
+            <div class="faq-answer">
+                <p>It depends on the local environment, but generally, it's recommended to pressure wash your house at least once a year to remove dirt, mold, and mildew.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Is pressure washing safe for my surfaces?</button>
+            <div class="faq-answer">
+                <p>Yes, when done correctly. Our team uses the right pressure and techniques to ensure no damage to your surfaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-post">
+            <h3>Benefits of Regular Pressure Washing</h3>
+            <p>Learn how regular pressure washing can extend the life of your home's exterior and keep it looking its best.</p>
+            <a href="blog-post.html" class="btn-primary">Read More</a>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="reviews-slider">
+            <div class="review-item">
+                <p>"Corville Pressure Cleaners did an amazing job on my driveway. Highly recommend!"</p>
+            </div>
+            <div class="review-item">
+                <p>"Professional and efficient service. My house looks brand new!"</p>
+            </div>
+            <div class="review-item">
+                <p>"The team was friendly and did an excellent job. Will use them again."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Call us at (561) 288-0598 or use the form below to book a service.</p>
+        <form action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="date">Preferred Date</label>
+            <input type="text" id="date" name="date" placeholder="MM/DD/YYYY" required>
+
+            <label for="service">Service Needed</label>
+            <textarea id="service" name="service" rows="4" required></textarea>
+
+            <button type="submit">Book Now</button>
+        </form>
+
+        <div class="call-instructions">
+            <h3>Instructions for Calling</h3>
+            <ol>
+                <li>Dial the number (561) 288-0598.</li>
+                <li>Listen to the prompts carefully.</li>
+                <li>Press the appropriate number for the service you need.</li>
+                <li>Leave a detailed message including your name, contact information, and preferred service time.</li>
+            </ol>
+        </div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL_HERE" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Corville Pressure Cleaners. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Styles for the website (includes new sections) */
+
+/* Existing styles... */
+
+/* Gallery Section */
+#gallery {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-grid a {
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: block;
+}
+
+.gallery-grid img {
+    max-width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.1);
+}
+
+/* FAQ Section */
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #d35400;
+}
+
+.faq-answer {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Blog Section */
+#blog {
+    background-color: #f2f2f2;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.blog-post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Testimonials Slider */
+.reviews-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+}
+
+.review-item {
+    flex: 0 0 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Map Container */
+.map-container {
+    margin-top: 40px;
+    max-width: 100%;
+}
+
+.map-container iframe {
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+}
