@@ -4,161 +4,349 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corville Pressure Cleaners</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f0f0f0;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        a:hover {
+            color: #388E3C;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        /* Hero Section with Video */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        #hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            filter: brightness(50%) contrast(120%);
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+
+        #hero p {
+            font-size: 1.7em;
+            z-index: 1;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #1B1B1B;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #about img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Services Section */
+        #services {
+            background-color: #282828;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #services img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .service-item {
+            display: inline-block;
+            width: 45%;
+            margin: 20px 2.5%;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background-color: #212121;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #gallery img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 15px;
+        }
+
+        /* Blog Section */
+        #blog {
+            background-color: #333333;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #blog img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: #1F1F1F;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #testimonials img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 15px;
+        }
+
+        /* Reviews Section */
+        #reviews {
+            background-color: #333;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .review {
+            background-color: #444;
+            border-radius: 10px;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .review p {
+            font-size: 1.1em;
+            color: #eee;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #282828;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1B1B1B;
+            color: #FFFFFF;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            #hero h1 {
+                font-size: 2.5em;
+            }
+
+            #hero p {
+                font-size: 1.2em;
+            }
+
+            .service-item {
+                width: 90%;
+                margin: 20px 5%;
+            }
+
+            #services img, #gallery img, #testimonials img {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header id="header">
-        <div class="logo">
-            <h1>Corville Pressure Cleaners</h1>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-icon">
-                <div class="menu-bar"></div>
-                <div class="menu-bar"></div>
-                <div class="menu-bar"></div>
-            </div>
-        </nav>
-    </header>
 
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
     <section id="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2>Professional Pressure Cleaning Services</h2>
-            <p>Make your home shine with our expert cleaning services.</p>
-            <a href="#services" class="btn-primary">Our Services</a>
-        </div>
+        <video autoplay loop muted playsinline>
+            <source src="/mnt/data/istockphoto-1218536021-640_adpp_is.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Welcome to Corville Pressure Cleaners</h1>
+        <p>Your Trusted Pressure Cleaning Professionals</p>
     </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="service-icon">🏠</div>
-                <h3>House Washing</h3>
-                <p>Keep your home looking new with our house washing services.</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🧼</div>
-                <h3>Driveway Cleaning</h3>
-                <p>Remove stains and dirt from your driveway.</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🌳</div>
-                <h3>Roof Cleaning</h3>
-                <p>Protect your roof with our gentle cleaning techniques.</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🏢</div>
-                <h3>Commercial Cleaning</h3>
-                <p>Professional cleaning for commercial properties.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <h2>Our Work</h2>
-        <div class="gallery-grid">
-            <a href="img1.jpg" data-lightbox="gallery"><img src="img1_thumb.jpg" alt="Before and after 1"></a>
-            <a href="img2.jpg" data-lightbox="gallery"><img src="img2_thumb.jpg" alt="Before and after 2"></a>
-            <a href="img3.jpg" data-lightbox="gallery"><img src="img3_thumb.jpg" alt="Before and after 3"></a>
-            <a href="img4.jpg" data-lightbox="gallery"><img src="img4_thumb.jpg" alt="Before and after 4"></a>
-        </div>
-    </section>
-
+    <!-- About Section -->
     <section id="about">
         <h2>About Us</h2>
-        <div class="about-content">
-            <p>Corville Pressure Cleaners is dedicated to providing top-quality cleaning services for residential and commercial properties. Our experienced team uses the latest techniques and equipment to ensure your property looks its best.</p>
+        <img src="https://img.freepik.com/premium-photo/workers-using-pressure-washer-clean-driveway-professional-cleaning-service-concept-professional-cleaning-service-pressure-washer-driveway-cleaning-outdoor-maintenance-worker-action_918839-63377.jpg" alt="About Us Image">
+        <p>Corville Pressure Cleaners has been providing top-notch cleaning services for over a decade. Our team is dedicated to ensuring your property looks its best with our state-of-the-art equipment and experienced professionals.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-item">
+            <img src="https://qph.cf2.quoracdn.net/main-qimg-096cf9f161dd9da643cf843e6e5bb826" alt="Service 1">
+            <h3>Residential Cleaning</h3>
+            <p>We offer comprehensive residential pressure cleaning services to keep your home looking pristine.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/513bf0a5-ebe7-4759-8a52-638a657215a0.jpeg" alt="Service 2">
+            <h3>Commercial Cleaning</h3>
+            <p>Our commercial cleaning services ensure your business premises make a great impression on clients.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://www.fullcirclefm.com/images/uploads/f4824c0cff1bd20d0ac00e4a84b8e500ReKrete_Storefront_BeforeAfter_2.jpg" alt="Service 3">
+            <h3>Graffiti Removal</h3>
+            <p>Our expert team can remove graffiti from any surface, restoring it to its original state.</p>
+        </div>
+        <div class="service-item">
+            <img src="https://www.jlpropertyservice.com/fbm-data/images/projects/concrete-washing/brick-step-b-a.jpg" alt="Service 4">
+            <h3>Concrete Cleaning</h3>
+            <p>We specialize in cleaning and restoring concrete surfaces to look like new again.</p>
         </div>
     </section>
 
-    <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <button class="faq-question">How often should I pressure wash my house?</button>
-            <div class="faq-answer">
-                <p>It depends on the local environment, but generally, it's recommended to pressure wash your house at least once a year to remove dirt, mold, and mildew.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Is pressure washing safe for my surfaces?</button>
-            <div class="faq-answer">
-                <p>Yes, when done correctly. Our team uses the right pressure and techniques to ensure no damage to your surfaces.</p>
-            </div>
-        </div>
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <img src="https://pbs.twimg.com/media/FevvgjfXwAAi9cA.jpg" alt="Gallery Image 1">
+        <img src="https://www.prokleenindustriesllc.com/wp-content/uploads/2023/11/Gas-Station-Cleaning-2.jpg" alt="Gallery Image 2">
+        <img src="https://nextdaycleaning.com/wp-content/uploads/2022/11/How-much-is-commercial-tile-cleaning.jpg" alt="Gallery Image 3">
+        <img src="https://t4.ftcdn.net/jpg/03/36/83/39/360_F_336833953_YCo6LyQm3otMmMPszx0ZN1BSGmyqiFa6.jpg" alt="Gallery Image 4">
     </section>
 
+    <!-- Blog Section -->
     <section id="blog">
-        <h2>Latest Blog Posts</h2>
-        <div class="blog-post">
-            <h3>Benefits of Regular Pressure Washing</h3>
-            <p>Learn how regular pressure washing can extend the life of your home's exterior and keep it looking its best.</p>
-            <a href="blog-post.html" class="btn-primary">Read More</a>
-        </div>
+        <h2>Our Blog</h2>
+        <img src="https://www.cummingexteriorcleaning.com/fbm-data/images/blog/house-washing-for-home-sanitizing.jpg" alt="Blog Image">
+        <p>Stay up to date with the latest news and tips from Corville Pressure Cleaners. Our blog covers everything from cleaning tips to industry insights.</p>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <img src="https://www.shutterstock.com/shutterstock/videos/1103233133/thumb/7.jpg?ip=x480" alt="Testimonials Image">
+        <p>“Corville Pressure Cleaners exceeded our expectations. They transformed our driveway and made it look brand new!”</p>
+    </section>
+
+    <!-- Reviews Section -->
     <section id="reviews">
-        <h2>Customer Reviews</h2>
-        <div class="reviews-slider">
-            <div class="review-item">
-                <p>"Corville Pressure Cleaners did an amazing job on my driveway. Highly recommend!"</p>
-            </div>
-            <div class="review-item">
-                <p>"Professional and efficient service. My house looks brand new!"</p>
-            </div>
-            <div class="review-item">
-                <p>"The team was friendly and did an excellent job. Will use them again."</p>
-            </div>
+        <h2>Reviews</h2>
+        <div class="review">
+            <p>"Amazing service! They were professional and did a fantastic job on our patio. Highly recommend!" - Jane Doe</p>
+        </div>
+        <div class="review">
+            <p>"I couldn't believe the difference after Corville cleaned our siding. It looks like a new house!" - John Smith</p>
+        </div>
+        <div class="review">
+            <p>"Quick and efficient. The team was very friendly, and our office exterior has never looked better." - Sarah Lee</p>
+        </div>
+        <div class="review">
+            <p>"Affordable and top-notch service. Will definitely use Corville again for future cleaning needs." - Michael Brown</p>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Call us at (561) 288-0598 or use the form below to book a service.</p>
-        <form action="#" method="post">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="date">Preferred Date</label>
-            <input type="text" id="date" name="date" placeholder="MM/DD/YYYY" required>
-
-            <label for="service">Service Needed</label>
-            <textarea id="service" name="service" rows="4" required></textarea>
-
-            <button type="submit">Book Now</button>
-        </form>
-
-        <div class="call-instructions">
-            <h3>Instructions for Calling</h3>
-            <ol>
-                <li>Dial the number (561) 288-0598.</li>
-                <li>Listen to the prompts carefully.</li>
-                <li>Press the appropriate number for the service you need.</li>
-                <li>Leave a detailed message including your name, contact information, and preferred service time.</li>
-            </ol>
-        </div>
-
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL_HERE" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <p>Call us today at <strong>561-288-0598</strong> to schedule your cleaning service or for a free quote. Our team is ready to assist you!</p>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Corville Pressure Cleaners. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
