@@ -9,18 +9,18 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="services-section">
+    <section id="services">
       <h2>Our Services</h2>
-      <div className="services-grid">
+      <div className="grid">
         {services.map((service, index) => (
-          <div key={index} className="service-card">
-            <span className="service-icon">{service.icon}</span>
+          <div key={index} className="card">
+            <span className="icon">{service.icon}</span>
             <h3>{service.title}</h3>
             <p>{service.description}</p>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
