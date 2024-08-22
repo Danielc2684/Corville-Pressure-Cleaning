@@ -1,77 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Website Title -->
     <title>Corville Pressure Cleaners</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Stylesheet -->
     <style>
+        /* Color Palette */
+        :root {
+            --dark-blue: #03045e;
+            --blue-1: #023e8a;
+            --blue-2: #0077b6;
+            --blue-3: #0096c7;
+            --blue-4: #00b4d8;
+            --blue-5: #48cae4;
+            --blue-6: #90e0ef;
+            --blue-7: #ade8f4;
+            --light-blue: #caf0f8;
+            --white: #ffffff;
+            --gray: #f1f1f1;
+        }
+
         /* Global Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--blue-1);
+            background-color: var(--gray);
             line-height: 1.6;
-            overflow-x: hidden;
-            background-color: #f0f0f0;
         }
 
         h1, h2, h3 {
-            color: #ffffff;
             font-family: 'Montserrat', sans-serif;
+            color: var(--dark-blue);
         }
 
         a {
             text-decoration: none;
-            color: #4CAF50;
+            color: inherit;
         }
 
-        a:hover {
-            color: #388E3C;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Navbar Styles */
-        nav {
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 15px 20px;
+        .navbar {
             position: fixed;
             width: 100%;
-            z-index: 1000;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            background-color: var(--dark-blue);
+            padding: 1rem 2rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
         }
 
-        nav ul li {
-            margin: 0 15px;
+        .navbar .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
-        nav ul li a {
-            color: white;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
+        .navbar .nav-links {
+            display: flex;
+            gap: 1.5rem;
         }
 
-        /* Hero Section with Video */
-        #hero {
+        .navbar .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--blue-5);
+        }
+
+        .navbar .menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
             position: relative;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: var(--white);
+            background-color: var(--blue-2);
             overflow: hidden;
         }
 
-        #hero video {
+        .hero video {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -81,266 +126,488 @@
             height: auto;
             z-index: -1;
             transform: translate(-50%, -50%);
-            filter: brightness(50%) contrast(120%);
+            object-fit: cover;
+            filter: brightness(50%);
         }
 
-        #hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            z-index: 1;
+        .hero .content {
+            max-width: 800px;
+            padding: 0 1rem;
         }
 
-        #hero p {
-            font-size: 1.7em;
-            z-index: 1;
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .btn {
+            padding: 0.75rem 2rem;
+            background-color: var(--blue-4);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: var(--blue-5);
         }
 
         /* About Section */
-        #about {
-            background-color: #1B1B1B;
-            color: #FFFFFF;
-            padding: 80px 20px;
-            text-align: center;
+        .about {
+            padding: 5rem 2rem;
+            background-color: var(--white);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
         }
 
-        #about img {
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-            margin: 20px 0;
+        .about .image {
+            flex: 1 1 400px;
+        }
+
+        .about .text {
+            flex: 1 1 400px;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--blue-2);
+        }
+
+        .about p {
+            font-size: 1rem;
+            color: var(--blue-1);
+            margin-bottom: 1.5rem;
+        }
+
+        .about .btn {
+            padding: 0.75rem 2rem;
+            background-color: var(--blue-3);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .about .btn:hover {
+            background-color: var(--blue-4);
         }
 
         /* Services Section */
-        #services {
-            background-color: #282828;
-            color: #FFFFFF;
-            padding: 80px 20px;
+        .services {
+            padding: 5rem 2rem;
+            background-color: var(--light-blue);
             text-align: center;
         }
 
-        #services img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--blue-2);
         }
 
-        .service-item {
-            display: inline-block;
-            width: 45%;
-            margin: 20px 2.5%;
+        .services .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .services .card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 300px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .services .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .services .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .services .card .card-content {
+            padding: 1.5rem;
+        }
+
+        .services .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--blue-2);
+        }
+
+        .services .card p {
+            font-size: 1rem;
+            color: var(--blue-1);
+            margin-bottom: 1rem;
+        }
+
+        .services .card .btn {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--blue-3);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .services .card .btn:hover {
+            background-color: var(--blue-4);
         }
 
         /* Gallery Section */
-        #gallery {
-            background-color: #212121;
-            color: #FFFFFF;
-            padding: 80px 20px;
+        .gallery {
+            padding: 5rem 2rem;
+            background-color: var(--white);
             text-align: center;
         }
 
-        #gallery img {
+        .gallery h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--blue-2);
+        }
+
+        .gallery .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery .images img {
             width: 100%;
-            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
             border-radius: 10px;
-            margin: 15px;
+            transition: transform 0.3s;
         }
 
-        /* Blog Section */
-        #blog {
-            background-color: #333333;
-            color: #FFFFFF;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        #blog img {
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-            margin: 20px 0;
+        .gallery .images img:hover {
+            transform: scale(1.05);
         }
 
         /* Testimonials Section */
-        #testimonials {
-            background-color: #1F1F1F;
-            color: #FFFFFF;
-            padding: 80px 20px;
+        .testimonials {
+            padding: 5rem 2rem;
+            background-color: var(--light-blue);
             text-align: center;
         }
 
-        #testimonials img {
-            width: 100%;
-            max-width: 300px;
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--blue-2);
+        }
+
+        .testimonials .testimonials-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .testimonials .card {
+            background-color: var(--white);
             border-radius: 10px;
-            margin: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            max-width: 400px;
+            text-align: left;
+            position: relative;
         }
 
-        /* Reviews Section */
-        #reviews {
-            background-color: #333;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+        .testimonials .card::before {
+            content: "“";
+            font-size: 5rem;
+            color: var(--blue-5);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            opacity: 0.2;
         }
 
-        .review {
-            background-color: #444;
-            border-radius: 10px;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 600px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        .testimonials .card p {
+            font-size: 1rem;
+            color: var(--blue-1);
+            margin-bottom: 1.5rem;
         }
 
-        .review p {
-            font-size: 1.1em;
-            color: #eee;
+        .testimonials .card .customer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonials .card .customer img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonials .card .customer .info {
+            font-size: 0.9rem;
+            color: var(--blue-2);
         }
 
         /* Contact Section */
-        #contact {
-            background-color: #282828;
-            color: #FFFFFF;
-            padding: 80px 20px;
+        .contact {
+            padding: 5rem 2rem;
+            background-color: var(--blue-6);
             text-align: center;
+            color: var(--white);
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .contact .contact-info .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1rem;
+        }
+
+        .contact .contact-info .info-item i {
+            font-size: 1.5rem;
+            color: var(--blue-7);
         }
 
         /* Footer */
         footer {
-            background-color: #1B1B1B;
-            color: #FFFFFF;
-            padding: 30px 20px;
+            background-color: var(--dark-blue);
+            color: var(--white);
             text-align: center;
+            padding: 1.5rem 2rem;
         }
 
-        /* Responsive Design */
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            nav ul {
+            .navbar .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: var(--dark-blue);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1rem 0;
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .navbar .menu-icon {
+                display: block;
+            }
+
+            .about, .testimonials .testimonials-cards {
                 flex-direction: column;
             }
 
-            #hero h1 {
-                font-size: 2.5em;
-            }
-
-            #hero p {
-                font-size: 1.2em;
-            }
-
-            .service-item {
-                width: 90%;
-                margin: 20px 5%;
-            }
-
-            #services img, #gallery img, #testimonials img {
-                max-width: 100%;
+            .services .service-cards, .testimonials .testimonials-cards {
+                flex-direction: column;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
-    <nav>
-        <ul>
+    <nav class="navbar">
+        <div class="logo">Corville Cleaners</div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#blog">Blog</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section with Video Background -->
-    <section id="hero">
-        <video autoplay loop muted playsinline>
-            <source src="/mnt/data/istockphoto-1218536021-640_adpp_is.mp4" type="video/mp4">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <video autoplay muted loop>
+            <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <h1>Welcome to Corville Pressure Cleaners</h1>
-        <p>Your Trusted Pressure Cleaning Professionals</p>
+        <div class="content">
+            <h1>Restore the Beauty of Your Property</h1>
+            <p>Professional Pressure Washing Services You Can Trust</p>
+            <button class="btn" onclick="window.location.href='#contact'">Get a Free Quote</button>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <img src="https://img.freepik.com/premium-photo/workers-using-pressure-washer-clean-driveway-professional-cleaning-service-concept-professional-cleaning-service-pressure-washer-driveway-cleaning-outdoor-maintenance-worker-action_918839-63377.jpg" alt="About Us Image">
-        <p>Corville Pressure Cleaners has been providing top-notch cleaning services for over a decade. Our team is dedicated to ensuring your property looks its best with our state-of-the-art equipment and experienced professionals.</p>
+    <section class="about" id="about">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1597764693681-5cf8b8a89dd9" alt="About Us">
+        </div>
+        <div class="text">
+            <h2>About Us</h2>
+            <p>At Corville Pressure Cleaners, we specialize in delivering top-quality pressure washing services for both residential and commercial properties. With years of experience and a commitment to excellence, our team ensures that every surface shines like new.</p>
+            <p>We use eco-friendly products and advanced equipment to effectively remove dirt, grime, mold, and stains, enhancing the curb appeal and longevity of your property.</p>
+            <button class="btn" onclick="window.location.href='#services'">Our Services</button>
+        </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
+    <section class="services" id="services">
         <h2>Our Services</h2>
-        <div class="service-item">
-            <img src="https://qph.cf2.quoracdn.net/main-qimg-096cf9f161dd9da643cf843e6e5bb826" alt="Service 1">
-            <h3>Residential Cleaning</h3>
-            <p>We offer comprehensive residential pressure cleaning services to keep your home looking pristine.</p>
-        </div>
-        <div class="service-item">
-            <img src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/513bf0a5-ebe7-4759-8a52-638a657215a0.jpeg" alt="Service 2">
-            <h3>Commercial Cleaning</h3>
-            <p>Our commercial cleaning services ensure your business premises make a great impression on clients.</p>
-        </div>
-        <div class="service-item">
-            <img src="https://www.fullcirclefm.com/images/uploads/f4824c0cff1bd20d0ac00e4a84b8e500ReKrete_Storefront_BeforeAfter_2.jpg" alt="Service 3">
-            <h3>Graffiti Removal</h3>
-            <p>Our expert team can remove graffiti from any surface, restoring it to its original state.</p>
-        </div>
-        <div class="service-item">
-            <img src="https://www.jlpropertyservice.com/fbm-data/images/projects/concrete-washing/brick-step-b-a.jpg" alt="Service 4">
-            <h3>Concrete Cleaning</h3>
-            <p>We specialize in cleaning and restoring concrete surfaces to look like new again.</p>
+        <div class="service-cards">
+            <!-- Service 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1573842874798-655cebdf14b8" alt="House Washing">
+                <div class="card-content">
+                    <h3>House Washing</h3>
+                    <p>Comprehensive exterior cleaning to remove dirt, mold, and mildew, restoring your home's pristine look.</p>
+                    <button class="btn" onclick="window.location.href='#contact'">Learn More</button>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1596484552955-65378b3e63ce" alt="Driveway Cleaning">
+                <div class="card-content">
+                    <h3>Driveway Cleaning</h3>
+                    <p>Effective removal of oil stains, dirt, and grime to improve safety and appearance of your driveway.</p>
+                    <button class="btn" onclick="window.location.href='#contact'">Learn More</button>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555443719-3b609c1526d0" alt="Deck & Patio Cleaning">
+                <div class="card-content">
+                    <h3>Deck & Patio Cleaning</h3>
+                    <p>Restore your outdoor spaces by eliminating buildup and preparing them for enjoyable use.</p>
+                    <button class="btn" onclick="window.location.href='#contact'">Learn More</button>
+                </div>
+            </div>
+            <!-- Service 4 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1560448075-bb46f3aaf9a5" alt="Commercial Cleaning">
+                <div class="card-content">
+                    <h3>Commercial Cleaning</h3>
+                    <p>Professional cleaning solutions tailored for businesses to maintain a welcoming and clean environment.</p>
+                    <button class="btn" onclick="window.location.href='#contact'">Learn More</button>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <img src="https://pbs.twimg.com/media/FevvgjfXwAAi9cA.jpg" alt="Gallery Image 1">
-        <img src="https://www.prokleenindustriesllc.com/wp-content/uploads/2023/11/Gas-Station-Cleaning-2.jpg" alt="Gallery Image 2">
-        <img src="https://nextdaycleaning.com/wp-content/uploads/2022/11/How-much-is-commercial-tile-cleaning.jpg" alt="Gallery Image 3">
-        <img src="https://t4.ftcdn.net/jpg/03/36/83/39/360_F_336833953_YCo6LyQm3otMmMPszx0ZN1BSGmyqiFa6.jpg" alt="Gallery Image 4">
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog">
-        <h2>Our Blog</h2>
-        <img src="https://www.cummingexteriorcleaning.com/fbm-data/images/blog/house-washing-for-home-sanitizing.jpg" alt="Blog Image">
-        <p>Stay up to date with the latest news and tips from Corville Pressure Cleaners. Our blog covers everything from cleaning tips to industry insights.</p>
+    <section class="gallery" id="gallery">
+        <h2>Our Work</h2>
+        <div class="images">
+            <img src="https://images.unsplash.com/photo-1581093809370-fd1ef4906a6e" alt="Gallery Image 1">
+            <img src="https://images.unsplash.com/photo-1595606312818-606e67d1f165" alt="Gallery Image 2">
+            <img src="https://images.unsplash.com/photo-1588008604510-b21a3bd75354" alt="Gallery Image 3">
+            <img src="https://images.unsplash.com/photo-1593718471276-c1f64f2f93bd" alt="Gallery Image 4">
+        </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials">
+    <section class="testimonials" id="testimonials">
         <h2>What Our Clients Say</h2>
-        <img src="https://www.shutterstock.com/shutterstock/videos/1103233133/thumb/7.jpg?ip=x480" alt="Testimonials Image">
-        <p>“Corville Pressure Cleaners exceeded our expectations. They transformed our driveway and made it look brand new!”</p>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews">
-        <h2>Reviews</h2>
-        <div class="review">
-            <p>"Amazing service! They were professional and did a fantastic job on our patio. Highly recommend!" - Jane Doe</p>
-        </div>
-        <div class="review">
-            <p>"I couldn't believe the difference after Corville cleaned our siding. It looks like a new house!" - John Smith</p>
-        </div>
-        <div class="review">
-            <p>"Quick and efficient. The team was very friendly, and our office exterior has never looked better." - Sarah Lee</p>
-        </div>
-        <div class="review">
-            <p>"Affordable and top-notch service. Will definitely use Corville again for future cleaning needs." - Michael Brown</p>
+        <div class="testimonials-cards">
+            <!-- Testimonial 1 -->
+            <div class="card">
+                <p>"Corville Pressure Cleaners did an amazing job on our house. The siding looks brand new! Highly recommend their services."</p>
+                <div class="customer">
+                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Customer 1">
+                    <div class="info">
+                        <strong>Emily R.</strong>
+                        <span>Homeowner</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="card">
+                <p>"Professional and efficient. Our office building has never looked better. Will definitely use them again."</p>
+                <div class="customer">
+                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Customer 2">
+                    <div class="info">
+                        <strong>Michael S.</strong>
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="card">
+                <p>"Fantastic service! The team was punctual and thorough. Our deck is ready for summer thanks to Corville."</p>
+                <div class="customer">
+                    <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Customer 3">
+                    <div class="info">
+                        <strong>Sarah L.</strong>
+                        <span>Homeowner</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Call us today at <strong>561-288-0598</strong> to schedule your cleaning service or for a free quote. Our team is ready to assist you!</p>
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Ready to transform your property? Contact us today for a free quote!</p>
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>561-288-0598</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@corvillecleaners.com</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>1234 Clean Street, Miami, FL</span>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -348,5 +615,14 @@
         <p>&copy; 2024 Corville Pressure Cleaners. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
 </body>
+
 </html>
