@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.home-section, .services-section, .gallery-section, .about-section, .faq-section, .blog-section, .reviews-section, .contact-section {
+  padding: 20px;
+}
+
+.services-grid, .gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-card, .gallery-img, .blog-post, .review-item, .faq-item {
+  margin: 10px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.contact-form input, .contact-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
