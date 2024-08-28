@@ -1,4 +1,5 @@
 import React from 'react';
+import './FAQ.css';
 
 const faqs = [
   { question: 'How often should I pressure wash my house?', answer: 'It depends on the local environment, but generally, it\'s recommended to pressure wash your house at least once a year to remove dirt, mold, and mildew.' },

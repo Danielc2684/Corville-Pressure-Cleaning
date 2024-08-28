@@ -1,18 +1,19 @@
 import React from 'react';
+import './Reviews.css';
 
 const reviews = [
   {
-    image: '/images/customer1.jpg', // Replace with actual image paths
+    image: 'boots.jpg', // Replace with actual image paths
     name: 'John Doe',
     review: 'Corville Pressure Cleaners did an amazing job on my driveway. Highly recommend!',
   },
   {
-    image: '/images/customer2.jpg',
+    image: 'boots.jpg',
     name: 'Jane Smith',
     review: 'Professional and efficient service. My house looks brand new!',
   },
   {
-    image: '/images/customer3.jpg',
+    image: 'boots.jpg',
     name: 'Michael Johnson',
     review: 'The team was friendly and did an excellent job. Will use them again.',
   },

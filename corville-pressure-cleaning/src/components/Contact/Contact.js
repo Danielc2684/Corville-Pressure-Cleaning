@@ -1,10 +1,13 @@
 import React from 'react';
+import './Contact.css';
 
 const Contact = () => {
   return (
     <section className="contact-section">
       <h2>Contact Us</h2>
-      <p>Call us at <a href="tel:+15612880598">(561) 288-0598</a> or use the form below to book a service.</p>
+      <p>
+        Call us at <a href="tel:+15612880598">(561) 288-0598</a> or use the form below to book a service.
+      </p>
       <form className="contact-form">
         <input type="text" placeholder="Name" required />
         <input type="email" placeholder="Email" required />

@@ -1,0 +1,94 @@
+.about-section {
+  padding: 80px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #023E8A;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.about-section p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-section h3 {
+  font-size: 36px;
+  color: #0077b6;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.reasons-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+.reasons-list li {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: #333;
+  text-align: left;
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding-left: 50px; /* Space for the checkmark */
+}
+
+.reasons-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.reasons-list li::before {
+  content: "✔️";
+  color: #0077b6;
+  font-size: 24px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-section h2 {
+    font-size: 36px;
+  }
+
+  .about-section h3 {
+    font-size: 28px;
+  }
+
+  .reasons-list {
+    grid-template-columns: 1fr; /* Stack items vertically on small screens */
+  }
+
+  .reasons-list li {
+    font-size: 16px;
+    padding-left: 40px; /* Adjust padding for smaller screens */
+  }
+
+  .reasons-list li::before {
+    font-size: 20px;
+    top: 15px;
+    left: 15px; /* Adjust position for smaller screens */
+  }
+}

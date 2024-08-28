@@ -1,11 +1,12 @@
 import React from 'react';
+import './Blog.css';
 
 const blogPosts = [
   { 
     title: 'Benefits of Regular Pressure Washing', 
     link: '#', 
     description: 'Learn how regular pressure washing can extend the life of your home\'s exterior and keep it looking its best.', 
-    image: '/images/pressure_washing_benefits.jpg' // Example image
+    image: 'boots.jpg'
   }
 ];
 

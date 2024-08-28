@@ -1,0 +1,77 @@
+#services {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f4f4f4, #ffffff);
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #023E8A;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .service-image {
+  opacity: 0.9;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin: 20px;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+  margin: 0 20px 20px;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #services h2 {
+    font-size: 32px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './About.css';
 
 const About = () => {
   return (
@@ -9,13 +10,13 @@ const About = () => {
       </p>
       <h3>Why Choose Us?</h3>
       <ul className="reasons-list">
-        <li>✔️ Family-Run with a Personal Touch</li>
-        <li>✔️ Experienced and Professional Team</li>
-        <li>✔️ Eco-Friendly Cleaning Solutions</li>
-        <li>✔️ State-of-the-Art Equipment</li>
-        <li>✔️ Reliable and On-Time Service</li>
-        <li>✔️ Customized Cleaning Plans</li>
-        <li>✔️ Commitment to Customer Satisfaction</li>
+        <li>Family-Run with a Personal Touch</li>
+        <li>Experienced and Professional Team</li>
+        <li>Eco-Friendly Cleaning Solutions</li>
+        <li>State-of-the-Art Equipment</li>
+        <li>Reliable and On-Time Service</li>
+        <li>Customized Cleaning Plans</li>
+        <li>Commitment to Customer Satisfaction</li>
       </ul>
     </div>
   );
